@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición de Tensión - Administración</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medición de Tensión</h1>
+            <nav>
+                <a href="index.html" class="nav-link">Ingreso</a>
+                <a href="reporte.html" class="nav-link">Reportes</a>
+                <a href="admin.html" class="nav-link active">Admin</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="admin-container">
+                <h2>Administración de Datos</h2>
+                
+                <div class="admin-select">
+                    <label for="fecha-edicion">Seleccione la fecha a editar:</label>
+                    <input type="date" id="fecha-edicion">
+                </div>
+
+                <div id="edit-form-container" class="edit-form-container" style="display: none;">
+                    <h3>Editar Mediciones</h3>
+                    
+                    <div class="turno-edit-section">
+                        <h4>Turno: Mañana</h4>
+                        <div id="mañana-container" class="turno-container"></div>
+                    </div>
+
+                    <div class="turno-edit-section">
+                        <h4>Turno: Noche</h4>
+                        <div id="noche-container" class="turno-container"></div>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button id="btn-guardar-edicion" class="btn-primary">Guardar Cambios</button>
+                        <button id="btn-eliminar-dia" class="btn-danger">Eliminar Día</button>
+                    </div>
+
+                    <div id="mensaje-admin" class="mensaje"></div>
+                </div>
+
+                <div id="lista-dias" class="lista-dias"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+

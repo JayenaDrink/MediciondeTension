@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición de Tensión - Ingreso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medición de Tensión</h1>
+            <nav>
+                <a href="index.html" class="nav-link active">Ingreso</a>
+                <a href="reporte.html" class="nav-link">Reportes</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2>Ingreso de Mediciones</h2>
+                
+                <div class="form-group">
+                    <label for="fecha">Fecha de Medición:</label>
+                    <input type="date" id="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="turno">Turno:</label>
+                    <select id="turno" required>
+                        <option value="">Seleccione un turno</option>
+                        <option value="mañana">Mañana</option>
+                        <option value="noche">Noche</option>
+                    </select>
+                </div>
+
+                <div class="mediciones-container">
+                    <h3>Ingrese las Mediciones</h3>
+                    <div class="toma-section">
+                        <h4>Toma 1</h4>
+                        <div class="medicion-row">
+                            <label>
+                                Máxima:
+                                <input type="number" id="toma1-maxima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Mínima:
+                                <input type="number" id="toma1-minima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Pulso:
+                                <input type="number" id="toma1-pulso" min="0" max="200" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="toma-section">
+                        <h4>Toma 2</h4>
+                        <div class="medicion-row">
+                            <label>
+                                Máxima:
+                                <input type="number" id="toma2-maxima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Mínima:
+                                <input type="number" id="toma2-minima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Pulso:
+                                <input type="number" id="toma2-pulso" min="0" max="200" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="toma-section">
+                        <h4>Toma 3</h4>
+                        <div class="medicion-row">
+                            <label>
+                                Máxima:
+                                <input type="number" id="toma3-maxima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Mínima:
+                                <input type="number" id="toma3-minima" min="0" max="300" required>
+                            </label>
+                            <label>
+                                Pulso:
+                                <input type="number" id="toma3-pulso" min="0" max="200" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="promedios-section">
+                        <h4>Promedios Calculados</h4>
+                        <div class="promedio-row">
+                            <div class="promedio-item">
+                                <strong>Máxima:</strong>
+                                <span id="promedio-maxima">-</span>
+                            </div>
+                            <div class="promedio-item">
+                                <strong>Mínima:</strong>
+                                <span id="promedio-minima">-</span>
+                            </div>
+                            <div class="promedio-item">
+                                <strong>Pulso:</strong>
+                                <span id="promedio-pulso">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-guardar" class="btn-primary">Guardar Mediciones</button>
+                
+                <div id="mensaje" class="mensaje"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

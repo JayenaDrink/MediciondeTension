@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición de Tensión - Reportes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medición de Tensión</h1>
+            <nav>
+                <a href="index.html" class="nav-link">Ingreso</a>
+                <a href="reporte.html" class="nav-link active">Reportes</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="reporte-container">
+                <div class="reporte-header">
+                    <h2>Reporte de Mediciones</h2>
+                    <button id="btn-imprimir-pdf" class="btn-primary">Imprimir PDF</button>
+                </div>
+
+                <div id="reporte-content" class="reporte-content">
+                    <p class="no-data">No hay mediciones registradas.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="reporte.js"></script>
+</body>
+</html>
+
