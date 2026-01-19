@@ -37,6 +37,25 @@ function calcularPromedios() {
     document.getElementById('promedio-pulso').textContent = promedioPulso;
 }
 
+// Función para determinar turno según la hora actual
+function determinarTurnoAutomatico() {
+    const ahora = new Date();
+    const hora = ahora.getHours();
+    
+    // Hasta las 12:00 -> Mañana
+    if (hora < 12) {
+        return 'mañana';
+    }
+    // Después de las 18:00 -> Noche
+    else if (hora >= 18) {
+        return 'noche';
+    }
+    // Entre 12:00 y 18:00 -> Manual (retorna vacío)
+    else {
+        return '';
+    }
+}
+
 // Agregar event listeners para calcular promedios automáticamente
 document.addEventListener('DOMContentLoaded', function() {
     const inputs = document.querySelectorAll('.medicion-row input');
@@ -49,6 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const hoy = new Date().toISOString().split('T')[0];
     fechaInput.value = hoy;
     fechaInput.max = hoy; // No permitir fechas futuras
+
+    // Seleccionar turno automáticamente según la hora
+    const turnoInput = document.getElementById('turno');
+    const turnoAuto = determinarTurnoAutomatico();
+    if (turnoAuto) {
+        turnoInput.value = turnoAuto;
+    }
 
     // Botón de guardar
     document.getElementById('btn-guardar').addEventListener('click', guardarMedicion);
